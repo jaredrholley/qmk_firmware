@@ -58,7 +58,7 @@
 #endif
 
 #define LAYOUT_zoom(k00, k01, k02, k03, k04, k05 ) { { k00, k01, k02, k03, k04, k05} }
-#define B6_AUDIO
+#define AUDIO_PIN B6
 
 #define ENCODER_DIRECTION_FLIP
 

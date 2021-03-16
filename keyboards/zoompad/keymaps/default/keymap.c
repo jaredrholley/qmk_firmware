@@ -17,7 +17,7 @@ enum preonic_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_BASE] = LAYOUT_zoom(
-		EDOWN, WINL, KC_MPLY, KC_MNXT, ZMUTE, EUP),
+		EDOWN, WINL, KC_MPLY, KC_MNXT, KC_MUTE, EUP),
 	
 	[_LOWER] = LAYOUT_zoom(
 		_______, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, EBASE),
@@ -87,17 +87,21 @@ void oled_task_user(void) {
 #endif
 
 void encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) { /* First encoder */
+    if (index == 0) { /* Left encoder */
         if (clockwise) {
             tap_code(KC_DOWN);
         } else {
             tap_code(KC_UP);
         }
-    } else if (index == 1) { /* Second encoder */
+    } else if (index == 1) { /* Right encoder */
 		if (clockwise) {
             tap_code(KC_VOLU);
+			tap_code(KC_VOLU);
+			tap_code(KC_VOLU);
         } else {
             tap_code(KC_VOLD);
+			tap_code(KC_VOLD);
+			tap_code(KC_VOLD);
         }
     }
 }
