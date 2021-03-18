@@ -44,9 +44,6 @@ OPT_DEFS += -DBOOTLOADER_SIZE=4096
 # Build Options
 #   comment out to disable the options.
 #
-AUDIO_ENABLE = yes
-BOOTMAGIC_ENABLE ?= yes	# Virtual DIP switch configuration(+1000)
-MOUSEKEY_ENABLE ?= yes	# Mouse keys(+4700)
 CONSOLE_ENABLE ?= no	# Console for debug(+400)
 COMMAND_ENABLE ?= no    # Commands for debug and configuration
 SLEEP_LED_ENABLE ?= no  # Breathing sleep LED during USB suspend
@@ -58,3 +55,4 @@ RGBLIGHT_ENABLE ?= no
 OLED_DRIVER_ENABLE = yes
 ENCODER_ENABLE = yes
 EXTRAKEY_ENABLE = yes
+WPM_ENABLE = yes

@@ -58,7 +58,7 @@
 #endif
 
 #define LAYOUT_zoom(k00, k01, k02, k03, k04, k05 ) { { k00, k01, k02, k03, k04, k05} }
-#define AUDIO_PIN B6
+
 
 #define ENCODER_DIRECTION_FLIP
 
@@ -70,4 +70,4 @@
 #define ENCODERS_PAD_A { encoder1a, encoder2a }
 #define ENCODERS_PAD_B { encoder1b, encoder2b }
 
-#define NO_MUSIC_MODE
+#define OLED_SCROLL_TIMEOUT 10000
