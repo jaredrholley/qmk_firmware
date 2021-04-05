@@ -11,7 +11,8 @@ enum preonic_keycodes {
   EUP,
   EBASE,
   ZMUTE,
-  WINL
+  WINL,
+  AIQMK
 };
 
 static uint16_t idle_timer;
@@ -47,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		EDOWN, WINL, KC_MPLY, KC_MNXT, KC_MUTE, EUP),
 	
 	[_LOWER] = LAYOUT_zoom(
-		_______, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, EBASE),
+		_______, AIQMK, KC_TRNS, KC_TRNS, KC_TRNS, EBASE),
 
 	[_UPPER] = LAYOUT_zoom(
 		EBASE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, _______)
@@ -89,6 +90,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			if(record->event.pressed) {
 				SEND_STRING(SS_LGUI("l"));
 			}
+        case AIQMK:
+            if (record->event.pressed) {
+                register_code(KC_LCTL);
+                register_code(KC_LSFT);
+                register_code(KC_LALT);
+                tap_code_delay(KC_Q, 100);
+                unregister_code(KC_LCTL);
+                unregister_code(KC_LSFT);
+                unregister_code(KC_LALT);
+            }
 	}
 	return true;
 }
